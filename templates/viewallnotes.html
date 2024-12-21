@@ -1,0 +1,44 @@
+<head>
+    <title>Notes Viewer</title>
+</head>
+{% extends 'dashboard.html' %}
+{% block addcss %}
+    <link rel="stylesheet" href="/static/view.css">
+{% endblock %}
+{% block content %}
+<body class="view">
+    <div class="container">
+         <h1>Notes Viewer</h1>
+
+         <div class="input-container">
+              <input type="text" id="note-id" placeholder="Enter Note ID">
+              <button id="search-button">Search</button>
+         </div>
+
+         <table>
+              <thead>
+                   <tr>
+                        <th>Note ID</th>
+                        <th>Title</th>
+                        <th>Created At</th>
+                        <th>Actions</th>
+                   </tr>
+              </thead>
+              <tbody>
+                   {% for i in ndata %}
+                   <tr>
+                        <td>{{i[0]}}</td>
+                        <td>{{i[1]}}</td>
+                        <td>{{i[2]}}</td>
+                        <td>
+                             <a class="view-button" href="{{url_for('viewnotes',nid=i[0])}}">View</a>
+                             <a class="update-button" href="{{url_for('updatenotes',nid=i[0])}}">Update</a>
+                             <a class="delete-button" href="{{url_for('deletenotes',nid=i[0])}}">deletenotes</a>
+                        </td>
+                   </tr>
+                   {% endfor %}
+              </tbody>
+         </table>
+    </div>
+</body>
+{% endblock %}
