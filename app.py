@@ -6,10 +6,10 @@ from cmail import sendmail
 from stoken import encode,decode
 from flask_session import Session ##here it will add additional security to session import from flask above 1st cmd
 from io import  BytesIO  ## which converts buinary format to bytes
-import flask_excel as excel  ## for creating excel data
+import flask_excel as excel  ## for creating excel data 
 import re 
-app=Flask(__name__)  ## these is called object creation
-excel.init_excel(app)
+app=Flask(__name__)  ## these is called object creation 
+excel.init_excel(app) 
 app.config['SESSION_TYPE']='filesystem'
 app.secret_key='codegnan@2018'  # for using flash we use this secret key
 Session(app)
@@ -17,7 +17,7 @@ mydb=mysql.connector.connect(host='localhost',user='root',password='admin',db='v
 @app.route('/')
 def home():
     return render_template('welcome.html')
-@app.route('/create',methods=['GET','POST'])
+@app.route('/create',methods=['GET','POST']) 
 def create():
     if request.method=='POST':
         username=request.form['username']
@@ -168,7 +168,7 @@ def viewnotes(nid):
             ndata=cursor.fetchone() #(1,"python","hellowrold")
         except Exception as e:
             print(e)
-            flash('no data found')
+            flash('no data found') 
             return redirect(url_for('dashboard'))
         else:    
             return render_template('view.html',ndata=ndata)

@@ -1,11 +1,104 @@
 <head>
     <title>Add Notes</title>
+
+<style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://img.freepik.com/free-vector/wave-gradient-background-luxury-dark-modern-design_343694-3088.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Form container */
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+}
+
+/* Heading styling */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #343a40;
+}
+
+/* Label styling */
+label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+/* Input field and text area styling */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Text area specific */
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Button styling */
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #218838;
+}
+
+/* Error or warning messages styling (if required) */
+.error {
+    color: #dc3545;
+    font-size: 0.875rem;
+    margin-top: 10px;
+}
+
+.success {
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-top: 10px;
+}
+
+</style>    
+
 </head>
-{% extends 'dashboard.html' %}
-{% block addcss %}
-<link rel="stylesheet" href="/static/addnotes.css">
-{% endblock %}
-{% block content %}
+
 <body>
     <div class="form-container">
          <h2>Add a New Note</h2>
@@ -20,4 +113,3 @@
          </form>
     </div>
 </body>
-{% endblock %} 

@@ -13,98 +13,245 @@
     {% block addcss %}{% endblock %}
     
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
+        /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .navbar {
-            background-color:  #17181a;
-            color: white;
-        }
+/* Body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
 
-        .navbar .navbar-brand {
-            font-size: 1.5rem;
-            color: white;
-            font-weight: bold;
-        }
+/* Navbar styling */
+.navbar {
+    background-color: #17181a;
+    color: white;
+}
 
-        .navbar .navbar-brand img {
-            width: 30px;
-            margin-right: 10px;
-        }
+.navbar .navbar-brand {
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+}
 
-        .container {
-            margin-top: 30px;
-        }
+.navbar .navbar-brand img {
+    width: 30px;
+    margin-right: 10px;
+}
 
-        h4 {
-            color: #343a40;
-            margin-bottom: 15px;
-            font-weight: bold;
-        }
+.navbar .ml-auto {
+    font-size: 1rem;
+    color: white;
+    margin-left: auto;
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+/* Main container */
+.container {
+    margin-top: 30px;
+}
 
-        ul li {
-            margin-bottom: 10px;
-        }
+/* Card Section */
+.card {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
 
-        ul li a {
-            color: #007bff;
-            text-decoration: none;
-            font-size: 1rem;
-        }
+.card-header {
+    background-color: #17181a;
+    color: white;
+    font-weight: bold;
+    padding: 12px 15px;
+    border-radius: 8px 8px 0 0;
+}
 
-        ul li a:hover {
-            text-decoration: underline;
-        }
+.card-body {
+    padding: 20px;
+}
 
-        .search-input {
-            max-width: 500px;
-            margin: 20px auto;
-        }
+.card-body a {
+    text-decoration: none;
+    color: #17181a;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
 
-        .btn-logout {
-            display: block;
-            max-width: 200px;
-            margin: 30px auto;
-            padding: 10px;
-            text-align: center;
-            background-color: #dc3545;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
+.card-body a:hover {
+    text-decoration: underline;
+    color: #007bff;
+}
 
-        .btn-logout:hover {
-            background-color: #c82333;
-        }
+/* List and links styling */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        .card {
-            border: none;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
+ul li {
+    margin-bottom: 10px;
+}
 
-        .card-header {
-            background-color:  #17181a;;
-            color: white;
-            font-weight: bold;
-        }
+ul li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1rem;
+}
 
-        .card-body a {
-            text-decoration: none;
-            color:  #17181a;
-            font-weight: bold;
-        }
+ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Search input styling */
+.search-input {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.search-input input {
+    padding: 12px;
+    width: 80%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search-input button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.search-input button:hover {
+    background-color: #0056b3;
+}
+
+/* Logout Button styling */
+.btn-logout {
+    display: block;
+    max-width: 200px;
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background-color: #c82333;
+}
+
+/* Table styling for displaying notes */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #17181a;
+    color: white;
+    font-size: 16px;
+}
+
+table td {
+    font-size: 14px;
+}
+
+/* Table row hover effect */
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Action buttons in table */
+.view-button,
+.update-button,
+.delete-button {
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    margin: 2px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* View Button */
+.view-button {
+    background-color: #2196F3;
+}
+
+.view-button:hover {
+    background-color: #1976D2;
+}
+
+/* Update Button */
+.update-button {
+    background-color: #FFC107;
+}
+
+.update-button:hover {
+    background-color: #FF9800;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #f44336;
+}
+
+.delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .search-input input {
+        width: 100%;
+    }
+
+    .search-input button {
+        width: 100%;
+    }
+
+    table th,
+    table td {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .card-body a {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 {% with messages = get_flashed_messages() %}
@@ -120,7 +267,6 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
         <a class="navbar-brand" href="#">
-            <img src="" alt=""> Simple Notes
         </a>
         <span class="ml-auto">{{session.get('user')}}</span>
     </nav>

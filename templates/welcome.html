@@ -4,9 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+<style>
+    /* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and basic layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("https://www.dhyeyalaw.in/images/New-banner-min.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+/* Heading style */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Note input area */
+.note-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.note-input input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.note-input button {
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.note-input button:hover {
+    background-color: #45a049;
+}
+
+/* Notes list */
+.notes-list {
+    margin-top: 20px;
+}
+
+.note {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.note p {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.deleteNoteBtn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.deleteNoteBtn:hover {
+    background-color: #d32f2f;
+}
+
+/* Button styles for create, login, and delete actions */
+
+/* General Button Styling */
+button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Create Button */
+button.create-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.create-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Login Button */
+button.login-btn {
+    background-color: #2196F3;
+    color: white;
+}
+
+button.login-btn:hover {
+    background-color: #1976D2;
+    transform: translateY(-2px);
+}
+
+/* Delete Button inside notes list */
+button.deleteNoteBtn {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+button.deleteNoteBtn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+/* Optional: Adding a focus effect for accessibility */
+button:focus {
+    outline: 3px solid #ffa500; /* orange color focus ring */
+}
+
+
+</style>
+
 </head>
 <body>
-   <center>
+     <center>
     <a href="{{url_for('create')}}"><button>create</button><br></a><br>
     <a href="{{url_for('login')}}"><button>login</button></a>
    </center>
@@ -16,7 +166,7 @@
 <!-- <!DOCTYPE html>
 <html>
 <head>
-    <body>
+    <body> 
         body {
             font-family: Arial, sans-serif;
             margin: 0;
